@@ -15,6 +15,11 @@
         <img class="appimage" src="./mission-log.jpg">
         <p>Mission Log</p>
       </div>
+
+      <div class="appicon" id="launchIcon">
+        <div class="basicIcon">🚀</div>
+        <p>Launch Control</p>
+      </div>
     </div>
 
     <div class="window" id="welcome">
@@ -27,7 +32,7 @@
 
       <p>SUPER IMPORTANT MISSION CONTROL CENTER! Pressing buttons might launch Artemis V, be careful!</p>
 
-      <img class="windowimage" src="./download (1).jpeg"/>
+      <img class="windowimage" src="./download (1).jpeg">
 
       <a href="https://github.com/Mateooo93/OrbitOS">
         <p><strong>Source code</strong></p>
@@ -45,6 +50,34 @@
         <div id="missionText"></div>
       </div>
     </div>
+
+    <div class="window" id="launch" style="display: none; top: 220px; left: 260px;">
+      <div class="windowheader" id="launchheader">
+        <strong>Launch Control</strong>
+        <span class="closebutton" id="launchclose">X</span>
+      </div>
+
+      <h2>Artemis V Panel</h2>
+
+      <p>Status: <strong id="launchStatus">Not ready</strong></p>
+
+      <p>Fuel:</p>
+      <div class="fuelOuter">
+        <div id="fuelBar"></div>
+      </div>
+
+      <p id="fuelText">0%</p>
+
+      <button id="fuelButton">Add Fuel</button>
+      <button id="armButton">Arm Rocket</button>
+      <button id="launchButton">Launch</button>
+      <button id="abortButton">Abort Launch</button>
+      <button id="buildButton">Rebuild Rocket</button>
+
+      <h3>System Log</h3>
+      <div id="launchLog"></div>
+    </div>
+    
 
     <script src="script.js"></script>
   </body>

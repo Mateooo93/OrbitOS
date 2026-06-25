@@ -17,6 +17,10 @@ var missionScreen = document.querySelector("#mission");
 var missionClose = document.querySelector("#missionclose");
 var missionIcon = document.querySelector("#missionIcon");
 
+var launchScreen = document.querySelector("#launch");
+var launchClose = document.querySelector("#launchclose");
+var launchIcon = document.querySelector("#launchIcon");
+
 
 function closeWindow(element) {
   element.style.display = "none";
@@ -59,6 +63,15 @@ missionIcon.addEventListener("click", function() {
   openWindow(missionScreen);
 });
 
+launchClose.addEventListener("click", function() {
+  closeWindow(launchScreen);
+});
+
+launchIcon.addEventListener("click", function() {
+  selectIcon(launchIcon);
+  openWindow(launchScreen);
+});
+
 
 welcomeScreen.addEventListener("mousedown", function() {
   bringToFront(welcomeScreen);
@@ -68,9 +81,14 @@ missionScreen.addEventListener("mousedown", function() {
   bringToFront(missionScreen);
 });
 
+launchScreen.addEventListener("mousedown", function() {
+  bringToFront(launchScreen);
+});
+
 
 dragElement(welcomeScreen);
 dragElement(missionScreen);
+dragElement(launchScreen);
 
 
 function dragElement(element) {
@@ -155,6 +173,7 @@ function showMission(index) {
 
 function loadMissionList() {
   var list = document.querySelector("#missionList");
+  list.innerHTML = "";
 
   for (var i = 0; i < missions.length; i++) {
     var item = document.createElement("div");
@@ -174,3 +193,92 @@ function loadMissionList() {
 }
 
 loadMissionList();
+
+
+var fuel = 0;
+var armed = false;
+var launched = false;
+
+
+var BuildButton = document.querySelector("#buildButton");
+var fuelButton = document.querySelector("#fuelButton");
+var armButton = document.querySelector("#armButton");
+var launchButton = document.querySelector("#launchButton");
+var abortButton = document.querySelector("#abortButton");
+
+function updateLaunchPanel() {
+  document.querySelector("#fuelBar").style.width = fuel + "%";
+  document.querySelector("#fuelText").innerText = fuel + "%";
+
+  if (launched === true) {
+    document.querySelector("#launchStatus").innerText = "Launched";
+  } else if (armed === true) {
+    document.querySelector("#launchStatus").innerText = "Armed";
+  } else if (fuel >= 100) {
+    document.querySelector("#launchStatus").innerText = "Fueled";
+  } else {
+    document.querySelector("#launchStatus").innerText = "Not ready";
+  }
+}
+
+function addLaunchLog(text) {
+  var log = document.querySelector("#launchLog");
+  log.innerHTML = "<p>" + text + "</p>" + log.innerHTML;
+}
+
+fuelButton.addEventListener("click", function() {
+  if (launched === true) {
+    addLaunchLog("The rocket is already gone.");
+    return;
+  }
+
+  fuel = fuel + 20;
+
+  if (fuel > 100) {
+    fuel = 100;
+  }
+
+  addLaunchLog("Fuel loaded: " + fuel + "%");
+  updateLaunchPanel();
+});
+
+armButton.addEventListener("click", function() {
+  if (fuel < 100) {
+    addLaunchLog("Cannot arm. Fuel is not full.");
+    return;
+  }
+
+  armed = true;
+  addLaunchLog("Rocket armed. Please do not sneeze near the red button.");
+  updateLaunchPanel();
+});
+
+launchButton.addEventListener("click", function() {
+  if (armed === false) {
+    addLaunchLog("Launch denied. Rocket is not armed.");
+    return;
+  }
+
+  launched = true;
+  addLaunchLog("Artemis V launched. OrbitOS is now slightly more dangerous.");
+  updateLaunchPanel();
+});
+
+abortButton.addEventListener("click", function() {
+  if (launched === true) {
+    addLaunchLog("Abort denied. Rocket is already launched.");
+    return;
+  }
+
+  armed = false;
+  fuel = 0;
+  addLaunchLog("Launch aborted. Rocket is now safe.");
+  updateLaunchPanel();
+});
+BuildButton.addEventListener("click", function() {
+  armed = false;
+  launched = false;
+  fuel = 0;
+  addLaunchLog("Rocket rebuilt. Artemis V is now safe.");
+  updateLaunchPanel();
+});

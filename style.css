@@ -27,6 +27,7 @@ body {
   text-align: center;
   cursor: pointer;
   padding: 8px;
+  margin-bottom: 10px;
 }
 
 .appicon p {
@@ -39,6 +40,15 @@ body {
   object-fit: cover;
   border: solid;
   background-color: white;
+}
+
+.basicIcon {
+  font-size: 35px;
+  border: solid;
+  background-color: white;
+  width: 55px;
+  height: 55px;
+  margin: auto;
 }
 
 .selected {
@@ -79,13 +89,14 @@ body {
 .appcontent {
   display: flex;
   gap: 10px;
-  height: 260px;
+  height: 350px;
 }
 
 #missionList {
   width: 140px;
   border-right: solid;
   padding-right: 8px;
+  overflow-y: auto;
 }
 
 .missionItem {
@@ -98,4 +109,27 @@ body {
 #missionText {
   width: 300px;
   overflow-y: auto;
+}
+
+.fuelOuter {
+  border: solid 1px;
+  width: 250px;
+  height: 20px;
+}
+
+#fuelBar {
+  background-color: #121e8d;
+  width: 0%;
+  height: 20px;
+}
+
+#launchLog {
+  border: solid 1px;
+  height: 90px;
+  overflow-y: auto;
+  padding: 5px;
+}
+
+button {
+  margin: 3px;
 }
