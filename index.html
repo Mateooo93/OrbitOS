@@ -16,7 +16,10 @@
         <img class="appimage" src="./mission-log.jpg">
         <p>Mission Log</p>
       </div>
-
+    <div class="appicon" id="gameIcon">
+      <div class="basicIcon">🎮</div>
+      <p>Stardust Game</p>
+    </div>
       <div class="appicon" id="launchIcon">
         <div class="basicIcon">🚀</div>
         <p>Launch Control</p>
@@ -103,7 +106,22 @@
       <h3>Rocket Preview</h3>
       <div id="rocketPreview"></div>
     </div>
+    <div class="window" id="game" style="display: none; top: 180px; left: 380px;">
+      <div class="windowheader" id="gameheader">
+        <strong>Stardust Miner</strong>
+        <span class="closebutton" id="gameclose">X</span>
+      </div>
 
+      <h2>Mine Stardust from the Moon</h2>
+
+      <p>Stardust: <strong id="stardustCount">0</strong></p>
+      <p>Power: <strong id="minePower">1</strong></p>
+
+      <button id="mineButton">Mine 🌕</button>
+      <button id="upgradeButton">Upgrade Drill - 10 Stardust</button>
+
+      <p id="gameMessage">Click the moon to mine Stardust.</p>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>

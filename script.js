@@ -72,7 +72,7 @@ dragElement(document.querySelector("#welcome"));
 setupWindow("mission", "missionclose", "missionIcon");
 setupWindow("launch", "launchclose", "launchIcon");
 setupWindow("rocket", "rocketclose", "rocketIcon");
-
+setupWindow("game", "gameclose", "gameIcon");
 
 function dragElement(element) {
   var initialX = 0;
@@ -348,3 +348,30 @@ document.querySelector("#saveButton").addEventListener("click", function() {
 });
 
 updateRocketPreview();
+var stardust = 0;
+var minePower = 1;
+
+function updateGame() {
+  document.querySelector("#stardustCount").innerText = stardust;
+  document.querySelector("#minePower").innerText = minePower;
+}
+
+document.querySelector("#mineButton").addEventListener("click", function() {
+  stardust = stardust + minePower;
+  document.querySelector("#gameMessage").innerText = "You mined " + minePower + " Stardust!";
+  updateGame();
+});
+
+document.querySelector("#upgradeButton").addEventListener("click", function() {
+  if (stardust >= 10) {
+    stardust = stardust - 10;
+    minePower = minePower + 1;
+    document.querySelector("#gameMessage").innerText = "Drill upgraded!";
+  } else {
+    document.querySelector("#gameMessage").innerText = "Not enough Stardust.";
+  }
+
+  updateGame();
+});
+
+updateGame();
