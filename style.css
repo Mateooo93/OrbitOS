@@ -130,9 +130,6 @@ body {
   padding: 5px;
 }
 
-button {
-  margin: 3px;
-}
 #rocketPreview {
   border: solid 1px;
   width: 180px;
@@ -147,4 +144,27 @@ button {
   background-color: white;
   margin: 4px;
   padding: 5px;
+}
+
+button {
+  margin: 3px;
+}
+
+#moon {
+  position: fixed;
+  right: 40px;
+  top: 70px;
+  font-size: 90px;
+  z-index: 0;
+  animation: spinMoon 12s linear infinite;
+}
+
+@keyframes spinMoon {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
