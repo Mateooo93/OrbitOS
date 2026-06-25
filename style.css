@@ -1,0 +1,101 @@
+body {
+  font-family: Helvetica, 'Noto Sans', sans-serif;
+  background-color: #d9e0ff;
+  height: 100vh;
+  margin: 0;
+}
+
+.topbar {
+  background-color: #121e8d;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+#welcomeopen {
+  cursor: pointer;
+}
+
+#desktopApps {
+  padding-top: 50px;
+  padding-left: 16px;
+}
+
+.appicon {
+  width: 90px;
+  text-align: center;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.appicon p {
+  margin: 4px;
+}
+
+.appimage {
+  width: 55px;
+  height: 55px;
+  object-fit: cover;
+  border: solid;
+  background-color: white;
+}
+
+.selected {
+  background-color: #b7c2ff;
+}
+
+.window {
+  border: solid;
+  background-color: white;
+  width: 500px;
+  padding: 10px;
+  position: absolute;
+  top: 80px;
+  left: 80px;
+}
+
+.windowheader {
+  background-color: #121e8d;
+  color: white;
+  padding: 3.5px;
+  margin: 3.5px;
+  cursor: grab;
+  user-select: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.closebutton {
+  cursor: pointer;
+}
+
+.windowimage {
+  border-radius: 16px;
+  object-fit: cover;
+  width: 300px;
+}
+
+.appcontent {
+  display: flex;
+  gap: 10px;
+  height: 260px;
+}
+
+#missionList {
+  width: 140px;
+  border-right: solid;
+  padding-right: 8px;
+}
+
+.missionItem {
+  border: solid 1px;
+  margin-bottom: 6px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+#missionText {
+  width: 300px;
+  overflow-y: auto;
+}

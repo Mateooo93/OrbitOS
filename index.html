@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <div class="topbar">
+      <strong id="welcomeopen">OrbitOS</strong>
+      <span id="time"></span>
+    </div>
+
+    <div id="desktopApps">
+      <div class="appicon" id="missionIcon">
+        <img class="appimage" src="./mission-log.jpg">
+        <p>Mission Log</p>
+      </div>
+    </div>
+
+    <div class="window" id="welcome">
+      <div class="windowheader" id="welcomeheader">
+        <strong>Welcome to OrbitOS</strong>
+        <span class="closebutton" id="welcomeclose">X</span>
+      </div>
+
+      <h2>Introduction</h2>
+
+      <p>SUPER IMPORTANT MISSION CONTROL CENTER! Pressing buttons might launch Artemis V, be careful!</p>
+
+      <img class="windowimage" src="./download (1).jpeg"/>
+
+      <a href="https://github.com/Mateooo93/OrbitOS">
+        <p><strong>Source code</strong></p>
+      </a>
+    </div>
+
+    <div class="window" id="mission" style="display: none; top: 150px; left: 180px;">
+      <div class="windowheader" id="missionheader">
+        <strong>Mission Log</strong>
+        <span class="closebutton" id="missionclose">X</span>
+      </div>
+
+      <div class="appcontent">
+        <div id="missionList"></div>
+        <div id="missionText"></div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
