@@ -10,4 +10,4 @@ this is a very simple game where you mine stardust and upgrade your drill to min
 
 if you see a spinning moon, don't be alarmed(we accidently crashed into the moon in the proccess of testing a rocket)
 
-Houston we don't have a problemr
+Houston we don't have a problem
