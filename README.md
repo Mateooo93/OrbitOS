@@ -6,4 +6,6 @@ added 3 apps, artemis launch control, rocket build and mission log, they are all
 make sure you don't launch too many rockets!
 
 I also added a small incremental game called "stardust"
-this is a very simple game where you mine startdust and upgrade your drill to mine more startdust
+this is a very simple game where you mine stardust and upgrade your drill to mine more stardust
+
+if you see a spinning moon, don't be alarmed(we accidently crashed into the moon)
