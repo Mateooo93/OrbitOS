@@ -168,6 +168,7 @@ button {
     transform: rotate(360deg);
   }
 }
+
 #gameMessage {
   border: solid 1px;
   padding: 6px;
