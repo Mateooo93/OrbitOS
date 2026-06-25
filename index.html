@@ -20,6 +20,11 @@
         <div class="basicIcon">🚀</div>
         <p>Launch Control</p>
       </div>
+
+      <div class="appicon" id="rocketIcon">
+        <div class="basicIcon">🛠️</div>
+        <p>Rocket Builder</p>
+      </div>
     </div>
 
     <div class="window" id="welcome">
@@ -77,7 +82,27 @@
       <h3>System Log</h3>
       <div id="launchLog"></div>
     </div>
-    
+
+    <div class="window" id="rocket" style="display: none; top: 290px; left: 260px;">
+      <div class="windowheader" id="rocketheader">
+        <strong>Rocket Builder</strong>
+        <span class="closebutton" id="rocketclose">X</span>
+      </div>
+
+      <h2>Artemis V Rocket Builder</h2>
+
+      <p>Status: <strong id="rocketStatus">Not ready</strong></p>
+
+      <button id="fuselageButton">Add Fuselage</button>
+      <button id="engineButton">Add Engine</button>
+      <button id="parachuteButton">Add Parachute</button>
+      <button id="podButton">Add Pod</button>
+      <button id="saveButton">SAVE</button>
+      <button id="clearRocketButton">Clear</button>
+
+      <h3>Rocket Preview</h3>
+      <div id="rocketPreview"></div>
+    </div>
 
     <script src="script.js"></script>
   </body>

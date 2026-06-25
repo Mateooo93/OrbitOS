@@ -133,3 +133,18 @@ body {
 button {
   margin: 3px;
 }
+#rocketPreview {
+  border: solid 1px;
+  width: 180px;
+  min-height: 180px;
+  padding: 8px;
+  background-color: #eeeeee;
+  text-align: center;
+}
+
+.rocketPart {
+  border: solid 1px;
+  background-color: white;
+  margin: 4px;
+  padding: 5px;
+}
